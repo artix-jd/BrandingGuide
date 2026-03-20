@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A&A — Gen Z Brand Bible 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ROOT SYSTEM — The Brand Variables
+   ============================================================ */
+:root {
+  /* === PALETTE 1 — ELECTRIC OBSIDIAN (MAIN RECOMMENDED) === */
+  --e-black:    #080808;
+  --e-dark:     #111111;
+  --e-surface:  #1A1A1A;
+  --e-cyan:     #00F5D4;
+  --e-violet:   #7B2FFF;
+  --e-hot:      #FF3CAC;
+  --e-white:    #F0F0F0;
+  --e-gray:     #666;
+  --e-border:   rgba(255,255,255,0.07);
+
+  /* === PALETTE 2 — SOLAR FLARE === */
+  --s-black:    #0A0500;
+  --s-surface:  #161008;
+  --s-orange:   #FF6B00;
+  --s-yellow:   #FFD600;
+  --s-red:      #FF2C2C;
+  --s-cream:    #FFF8EE;
+
+  /* === PALETTE 3 — INDIGO EMPIRE === */
+  --i-black:    #06060F;
+  --i-surface:  #0D0D1F;
+  --i-blue:     #3D5AFE;
+  --i-teal:     #1DE9B6;
+  --i-purple:   #AA00FF;
+  --i-white:    #E8EAFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--e-black);
+  color: var(--e-white);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+body { cursor: none; }
+.cursor {
+  width: 12px; height: 12px;
+  background: var(--e-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s;
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1px solid var(--e-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   NOISE TEXTURE OVERLAY
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   FIXED NAV
+   ============================================================ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--e-border);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  background: linear-gradient(90deg, var(--e-cyan), var(--e-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--e-gray);
+}
+.nav-links {
+  display: flex; gap: 2rem; list-style: none;
+}
+.nav-links a {
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--e-gray); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--e-cyan); }
+@media(max-width:768px) { .nav-links { display:none; } }
+
+/* ============================================================
+   HERO — FULL ENERGY
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(123,47,255,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 40% at 20% 80%, rgba(0,245,212,0.1) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 50% at 80% 70%, rgba(255,60,172,0.08) 0%, transparent 60%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,245,212,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,245,212,0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(0,245,212,0.08);
+  border: 1px solid rgba(0,245,212,0.25);
+  border-radius: 100px;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--e-cyan);
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-pill-dot {
+  width: 6px; height: 6px;
+  background: var(--e-cyan);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 11rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.8s 0.1s ease both;
+  position: relative;
+}
+.hero-title .line1 { display: block; color: var(--e-white); }
+.hero-title .line2 {
+  display: block;
+  background: linear-gradient(90deg, var(--e-cyan) 0%, var(--e-violet) 50%, var(--e-hot) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-title .amp {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.6em;
+  -webkit-text-fill-color: rgba(240,240,240,0.3);
+}
+
+.hero-sub {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  font-weight: 300;
+  color: var(--e-gray);
+  max-width: 560px;
+  margin: 1.5rem auto 0;
+  animation: fadeUp 0.8s 0.25s ease both;
+  line-height: 1.8;
+}
+.hero-sub strong { color: var(--e-white); font-weight: 600; }
+
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+.hero-tag {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.hero-tag.cyan { background: rgba(0,245,212,0.12); color: var(--e-cyan); border: 1px solid rgba(0,245,212,0.2); }
+.hero-tag.violet { background: rgba(123,47,255,0.15); color: #A97FFF; border: 1px solid rgba(123,47,255,0.25); }
+.hero-tag.hot { background: rgba(255,60,172,0.12); color: #FF7DC9; border: 1px solid rgba(255,60,172,0.2); }
+
+.scroll-arrow {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--e-gray);
+  animation: fadeUp 1s 0.8s ease both;
+}
+.arrow-bounce {
+  width: 20px; height: 20px;
+  border-right: 2px solid var(--e-cyan);
+  border-bottom: 2px solid var(--e-cyan);
+  transform: rotate(45deg);
+  animation: bounce 1.5s infinite;
+}
+@keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(6px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+section { position: relative; z-index: 1; }
+.container { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem; }
+
+.sec-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--e-cyan);
+  margin-bottom: 1rem;
+}
+.sec-eyebrow::before {
+  content: ''; display: block;
+  width: 20px; height: 2px;
+  background: var(--e-cyan);
+  border-radius: 2px;
+}
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.sec-title em {
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+  background: linear-gradient(90deg, var(--e-cyan), var(--e-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sec-body {
+  font-size: 1.05rem; font-weight: 300;
+  color: var(--e-gray); line-height: 1.9;
+  max-width: 640px; margin-bottom: 3rem;
+}
+.divider-line {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--e-border), transparent);
+  margin: 0;
+}
+
+/* ============================================================
+   SECTION 0 — HOW BRANDING WORKS (Education)
+   ============================================================ */
+.brand-101 {
+  background: var(--e-dark);
+}
+.brand-101-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5px;
+  background: var(--e-border);
+  border: 1px solid var(--e-border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 2.5rem;
+}
+.b101-card {
+  background: var(--e-dark);
+  padding: 2rem;
+  position: relative;
+  transition: background 0.3s;
+}
+.b101-card:hover { background: rgba(0,245,212,0.04); }
+.b101-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: rgba(0,245,212,0.1);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.b101-icon { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+.b101-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem; font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.b101-desc { font-size: 0.875rem; color: var(--e-gray); line-height: 1.7; }
+.b101-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.6rem; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--e-cyan);
+  border: 1px solid rgba(0,245,212,0.2);
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+}
+
+/* ============================================================
+   SECTION 1 — PALETTE OPTIONS
+   ============================================================ */
+.palettes-section { background: var(--e-black); }
+
+.palette-mega-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2px;
+  background: var(--e-border);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--e-border);
+  margin-top: 2.5rem;
+}
+
+.pal-card {
+  background: var(--e-dark);
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: background 0.3s;
+}
+.pal-card:hover { background: #151515; }
+.pal-card.winner { background: #111; }
+.pal-card.winner::after {
+  content: '⚡ RECOMMENDED';
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  font-size: 0.55rem; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  background: linear-gradient(90deg, var(--e-cyan), var(--e-violet));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pal-swatches {
+  height: 180px;
+  display: flex;
+  position: relative; overflow: hidden;
+}
+.pal-swatch { flex: 1; transition: flex 0.3s ease; cursor: crosshair; }
+.pal-swatch:hover { flex: 2.5; }
+
+.pal-swatch-info {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; gap: 0;
+}
+.pal-hex-chip {
+  flex: 1;
+  padding: 0.3rem 0;
+  text-align: center;
+  font-family: 'Outfit', monospace;
+  font-size: 0.5rem; font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+.pal-swatches:hover .pal-hex-chip { opacity: 1; }
+
+.pal-body { padding: 1.75rem; flex: 1; }
+.pal-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem; font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+.pal-vibe {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.pal-why { font-size: 0.875rem; color: var(--e-gray); line-height: 1.75; margin-bottom: 1.25rem; }
+
+.pal-score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.pal-score-item { }
+.pal-score-label {
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--e-gray); margin-bottom: 0.3rem;
+}
+.pal-score-bar {
+  height: 4px; background: rgba(255,255,255,0.06);
+  border-radius: 4px; overflow: hidden;
+}
+.pal-score-fill {
+  height: 100%; border-radius: 4px;
+  transition: width 1.5s ease;
+}
+
+.pal-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+.pal-tag {
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   SECTION 2 — DEEP COLOR SYSTEM
+   ============================================================ */
+.color-system-section { background: var(--e-dark); }
+
+.color-anatomy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+@media(max-width:768px) { .color-anatomy { grid-template-columns: 1fr; } }
+
+.color-role-group { }
+.crg-label {
+  font-size: 0.65rem; font-weight: 800;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--e-cyan); margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--e-border);
+}
+.crg-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--e-border);
+}
+.crg-item:last-child { border: none; }
+.crg-swatch {
+  width: 48px; height: 48px;
+  border-radius: 8px; flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.crg-info { }
+.crg-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem; font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+.crg-hex {
+  font-size: 0.7rem; font-weight: 500;
+  color: var(--e-gray); letter-spacing: 0.05em;
+  margin-bottom: 0.3rem; font-family: monospace;
+}
+.crg-role { font-size: 0.78rem; color: var(--e-gray); line-height: 1.5; }
+
+/* What colors DO section */
+.color-psychology {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.cp-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--e-border);
+  background: var(--e-black);
+}
+.cp-dot { width: 12px; height: 12px; border-radius: 50%; margin-bottom: 1rem; }
+.cp-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.cp-desc { font-size: 0.8rem; color: var(--e-gray); line-height: 1.65; }
+
+/* Contrast checker */
+.contrast-checker {
+  margin-top: 2.5rem;
+  border: 1px solid var(--e-border);
+  border-radius: 12px; overflow: hidden;
+}
+.contrast-row {
+  display: flex; align-items: center;
+  padding: 1rem 1.5rem; gap: 1.5rem;
+  border-bottom: 1px solid var(--e-border);
+}
+.contrast-row:last-child { border: none; }
+.contrast-swatch-pair {
+  display: flex; gap: 0;
+  border-radius: 6px; overflow: hidden;
+  flex-shrink: 0;
+}
+.csp-bg { width: 40px; height: 36px; display:flex; align-items:center; justify-content:center; }
+.contrast-label { font-size: 0.8rem; color: var(--e-gray); flex: 1; }
+.contrast-badge {
+  font-size: 0.6rem; font-weight: 800;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.2rem 0.6rem; border-radius: 4px;
+}
+.pass { background: rgba(0,245,212,0.15); color: var(--e-cyan); }
+.warn { background: rgba(255,214,0,0.15); color: #FFD600; }
+
+/* ============================================================
+   SECTION 3 — TYPOGRAPHY DEEP DIVE
+   ============================================================ */
+.type-section { background: var(--e-black); }
+
+.font-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5px;
+  background: var(--e-border);
+  border: 1px solid var(--e-border);
+  border-radius: 12px; overflow: hidden;
+  margin-top: 2.5rem;
+}
+.font-card {
+  background: var(--e-dark);
+  padding: 2rem;
+  transition: background 0.3s;
+}
+.font-card:hover { background: #151515; }
+
+.fc-role {
+  font-size: 0.6rem; font-weight: 800;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+.fc-specimen {
+  margin-bottom: 1.2rem;
+  min-height: 80px;
+  display: flex; align-items: flex-end;
+}
+.fc-meta {
+  border-top: 1px solid var(--e-border);
+  padding-top: 1rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+}
+.fc-meta-item { }
+.fc-meta-label {
+  font-size: 0.55rem; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--e-gray); margin-bottom: 0.2rem;
+}
+.fc-meta-val { font-size: 0.8rem; font-weight: 600; }
+
+/* Why these fonts explanation */
+.type-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.type-why-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--e-border);
+}
+.twc-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.twc-title { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
+.twc-body { font-size:0.8rem; color:var(--e-gray); line-height:1.7; }
+
+/* Type scale showcase */
+.type-scale {
+  margin-top: 2.5rem;
+  border: 1px solid var(--e-border);
+  border-radius: 12px; overflow: hidden;
+}
+.ts-row {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--e-border);
+  display: flex; flex-direction: column; gap: 0.4rem;
+  transition: background 0.2s;
+}
+.ts-row:last-child { border: none; }
+.ts-row:hover { background: rgba(255,255,255,0.02); }
+.ts-meta {
+  display: flex; gap: 1.5rem;
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--e-gray);
+}
+.ts-meta span { color: var(--e-cyan); }
+
+/* ============================================================
+   SECTION 4 — LOGO SYSTEM
+   ============================================================ */
+.logo-section { background: var(--e-dark); }
+
+.logo-explain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.le-card {
+  padding: 1.5rem;
+  background: var(--e-black);
+  border-radius: 10px;
+  border: 1px solid var(--e-border);
+}
+.le-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  color: rgba(0,245,212,0.12);
+  line-height: 1; margin-bottom: 0.5rem;
+}
+.le-title { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
+.le-body { font-size:0.8rem; color:var(--e-gray); line-height:1.65; }
+
+.logo-concepts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5px;
+  background: var(--e-border);
+  border: 1px solid var(--e-border);
+  border-radius: 12px; overflow: hidden;
+  margin-top: 2rem;
+}
+.logo-concept {
+  background: var(--e-dark);
+}
+.logo-stage {
+  height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  padding: 2rem;
+}
+.logo-stage.dark { background: #080808; }
+.logo-stage.mid { background: #161616; }
+.logo-stage.light { background: #F0F0F0; }
+
+.logo-caption {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--e-border);
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--e-gray);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+/* ============================================================
+   SECTION 5 — ACCENT ELEMENTS
+   ============================================================ */
+.accents-section { background: var(--e-black); }
+
+.accent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.accent-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--e-border);
+  background: var(--e-dark);
+}
+.accent-demo {
+  height: 80px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  background: var(--e-black);
+}
+.accent-title { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:700; margin-bottom:0.3rem; }
+.accent-desc { font-size:0.78rem; color:var(--e-gray); line-height:1.6; }
+
+/* Actual accent demos */
+.gradient-bar {
+  width: 80%; height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--e-cyan), var(--e-violet), var(--e-hot));
+}
+.glow-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 0.08em;
+  color: var(--e-cyan);
+  text-shadow: 0 0 20px rgba(0,245,212,0.6), 0 0 40px rgba(0,245,212,0.2);
+}
+.border-glow {
+  width: 60px; height: 60px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: linear-gradient(var(--e-dark), var(--e-dark)) padding-box,
+              linear-gradient(135deg, var(--e-cyan), var(--e-violet)) border-box;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.tag-demo {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  justify-content: center;
+}
+.td {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.noise-demo {
+  width: 80%; height: 60px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0,245,212,0.15), rgba(123,47,255,0.15));
+  position: relative;
+  overflow: hidden;
+}
+.pill-demo {
+  display: flex; gap: 0.4rem;
+}
+.pd {
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  font-size: 0.6rem; font-weight: 700;
+}
+.underline-demo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem; font-weight: 800;
+  position: relative;
+  padding-bottom: 4px;
+}
+.underline-demo::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--e-cyan), var(--e-violet));
+}
+
+/* ============================================================
+   SECTION 6 — THUMBNAIL MOCKUPS
+   ============================================================ */
+.thumbs-section { background: var(--e-dark); }
+
+.thumb-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.thumb {
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--e-border);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.thumb:hover {
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.thumb-bg { position: absolute; inset: 0; }
+.thumb-over { position: absolute; inset: 0; }
+.thumb-content { position: absolute; inset: 0; padding: 1.25rem; display: flex; flex-direction: column; justify-content: space-between; }
+.thumb-cat {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.55rem; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  width: fit-content;
+}
+.thumb-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1;
+  letter-spacing: 0.03em;
+}
+.thumb-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+.thumb-ep {
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(240,240,240,0.5);
+}
+
+/* ============================================================
+   SECTION 7 — BRAND RULES
+   ============================================================ */
+.rules-section { background: var(--e-black); }
+
+.rules-big-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+@media(max-width:600px) { .rules-big-grid { grid-template-columns: 1fr; } }
+
+.rules-block {
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--e-border);
+}
+.rules-block-header {
+  padding: 1rem 1.5rem;
+  font-size: 0.65rem; font-weight: 800;
+  letter-spacing: 0.25em; text-transform: uppercase;
+}
+.do-header { background: rgba(0,245,212,0.08); color: var(--e-cyan); border-bottom: 1px solid rgba(0,245,212,0.1); }
+.dont-header { background: rgba(255,60,172,0.08); color: #FF7DC9; border-bottom: 1px solid rgba(255,60,172,0.1); }
+.rules-list { list-style: none; }
+.rules-list li {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--e-gray);
+  border-bottom: 1px solid var(--e-border);
+  position: relative; padding-left: 2.5rem;
+  line-height: 1.5;
+}
+.rules-list li:last-child { border: none; }
+.do-list li::before { content: '✓'; position: absolute; left: 1rem; color: var(--e-cyan); font-weight: 800; }
+.dont-list li::before { content: '×'; position: absolute; left: 1rem; color: #FF7DC9; font-weight: 800; font-size: 1.1rem; }
+
+/* ============================================================
+   SECTION 8 — FULL BRAND ECOSYSTEM MAP
+   ============================================================ */
+.ecosystem-section { background: var(--e-dark); }
+
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.eco-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--e-border);
+  background: var(--e-black);
+  text-align: center;
+}
+.eco-icon { font-size: 2rem; margin-bottom: 0.75rem; display: block; }
+.eco-title { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:700; margin-bottom:0.3rem; }
+.eco-items { font-size:0.78rem; color:var(--e-gray); line-height:1.7; }
+.eco-status {
+  display: inline-block; margin-top: 0.75rem;
+  font-size: 0.55rem; font-weight: 800;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.2rem 0.6rem; border-radius: 4px;
+}
+.stat-now { background: rgba(0,245,212,0.1); color: var(--e-cyan); }
+.stat-soon { background: rgba(123,47,255,0.1); color: #A97FFF; }
+.stat-later { background: rgba(255,255,255,0.05); color: var(--e-gray); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--e-dark);
+  border-top: 1px solid var(--e-border);
+}
+footer::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(123,47,255,0.1) 0%, transparent 60%);
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 0.08em;
+  background: linear-gradient(90deg, var(--e-cyan), var(--e-violet), var(--e-hot));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 1rem;
+  position: relative; z-index: 1;
+}
+.footer-tag {
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--e-gray); margin-bottom: 2rem;
+  position: relative; z-index: 1;
+}
+.footer-line {
+  width: 200px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--e-border), transparent);
+  margin: 2rem auto;
+  position: relative; z-index: 1;
+}
+.footer-copy {
+  font-size: 0.7rem; color: rgba(102,102,102,0.6);
+  letter-spacing: 0.1em;
+  position: relative; z-index: 1;
+}
+
+/* ============================================================
+   REVEAL ANIMATION
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <div>
+    <div class="nav-logo">A&amp;A</div>
+    <div class="nav-tag">Brand Bible 2026</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#branding101">Basics</a></li>
+    <li><a href="#palettes">Palettes</a></li>
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#typography">Fonts</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#accents">Accents</a></li>
+    <li><a href="#mockups">Mockups</a></li>
+    <li><a href="#rules">Rules</a></li>
+  </ul>
+</nav>
+
+<!-- ====== HERO ====== -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-pill">
+    <div class="hero-pill-dot"></div>
+    Gen Z Brand Bible — v2.0
+  </div>
+  <h1 class="hero-title">
+    <span class="line1">ANAND</span>
+    <span class="line1" style="display:inline;font-size:0.4em;font-family:'Fraunces',serif;font-style:italic;opacity:0.3">&amp;</span>
+    <span class="line2">ARADHYA</span>
+  </h1>
+  <p class="hero-sub">
+    The channel where <strong>business origin stories</strong> collide with <strong>tech reviews & history</strong> — told the way <strong>Gen Z actually wants to learn it.</strong> Bold. Fast. Real. Intelligent.
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag cyan">Zero to Hero Stories</span>
+    <span class="hero-tag violet">Tech Reviews & Deep Dives</span>
+    <span class="hero-tag hot">History Behind Everything</span>
+  </div>
+  <div class="scroll-arrow">
+    Explore guide
+    <div class="arrow-bounce"></div>
+  </div>
+</div>
+
+<!-- ====== SECTION 0 — BRANDING 101 ====== -->
+<div id="branding101" class="brand-101">
+<div class="container">
+  <div class="sec-eyebrow">00 — Understand It First</div>
+  <h2 class="sec-title">What Even <em>IS</em> a Brand?</h2>
+  <p class="sec-body">Before we pick colours and fonts — you need to know what each piece of a brand actually DOES. Think of your brand like a person's personality. Every element below is one trait that makes people recognise and trust you.</p>
+
+  <div class="brand-101-grid">
+    <div class="b101-card reveal">
+      <div class="b101-num">01</div>
+      <span class="b101-icon">🎨</span>
+      <div class="b101-title">Color Palette</div>
+      <p class="b101-desc">Colors create instant emotion before anyone reads a word. Cyan/teal = modern & tech-forward. Purple = creative & mysterious. Hot pink = energetic & Gen Z. Dark backgrounds = premium. Your brain registers color in 90 milliseconds — before text, before logos, before anything.</p>
+      <span class="b101-tag">EMOTION TRIGGER</span>
+    </div>
+    <div class="b101-card reveal reveal-d1">
+      <div class="b101-num">02</div>
+      <span class="b101-icon">🔤</span>
+      <div class="b101-title">Typography (Fonts)</div>
+      <p class="b101-desc">Fonts are your voice — literally. A fat, blocky font = loud & confident. An italic serif = intellectual & editorial. A monospace font = technical & precise. Most creators use boring default fonts and wonder why they look generic. Your font choice IS a design decision.</p>
+      <span class="b101-tag">VOICE + TONE</span>
+    </div>
+    <div class="b101-card reveal reveal-d2">
+      <div class="b101-num">03</div>
+      <span class="b101-icon">✦</span>
+      <div class="b101-title">Logo</div>
+      <p class="b101-desc">A logo is your badge. It appears on thumbnails, channel art, merch, watermarks, and intros. A great logo works in 3 forms: full wordmark (A&A), icon/monogram (the symbol alone), and sub-brand (episode tags). Most small channels only have one version — you'll have all three.</p>
+      <span class="b101-tag">RECOGNITION</span>
+    </div>
+    <div class="b101-card reveal">
+      <div class="b101-num">04</div>
+      <span class="b101-icon">⚡</span>
+      <div class="b101-title">Accent Elements</div>
+      <p class="b101-desc">Accents are the spice — gradient bars, glowing borders, pill tags, underlines. They make layouts feel DESIGNED vs. just slapped together. Used in thumbnails, lower thirds in videos, YouTube cards, intro animations. Think of them as punctuation for your visuals.</p>
+      <span class="b101-tag">VISUAL SEASONING</span>
+    </div>
+    <div class="b101-card reveal reveal-d1">
+      <div class="b101-num">05</div>
+      <span class="b101-icon">📐</span>
+      <div class="b101-title">Layout / Spacing</div>
+      <p class="b101-desc">How elements are arranged on a thumbnail, a social post, or your channel banner. Crowded = cheap. Breathing room = premium. Consistent margins, grids, and alignment make random layouts look intentional. Big YouTubers have layout templates — you'll build yours here.</p>
+      <span class="b101-tag">STRUCTURE</span>
+    </div>
+    <div class="b101-card reveal reveal-d2">
+      <div class="b101-num">06</div>
+      <span class="b101-icon">🌊</span>
+      <div class="b101-title">Visual Motion</div>
+      <p class="b101-desc">Animations in your intro, transitions, text reveals — these are what separate a 2020 YouTube channel from a 2026 one. Even a 2-second animated logo with a glow effect signals premium production. Gen Z audiences are trained on TikTok motion — your channel needs to feel alive.</p>
+      <span class="b101-tag">ENERGY + LIFE</span>
+    </div>
+    <div class="b101-card reveal">
+      <div class="b101-num">07</div>
+      <span class="b101-icon">🧬</span>
+      <div class="b101-title">Brand Voice</div>
+      <p class="b101-desc">Not visual — but critical. The WAY you write titles, descriptions, captions. A&A's voice: Smart but not boring. Fast-paced but not shallow. Curious, punchy, real. No "Today we're going to learn about..." energy. More "You've NEVER been told WHY this actually happened" energy.</p>
+      <span class="b101-tag">CONTENT DNA</span>
+    </div>
+    <div class="b101-card reveal reveal-d1">
+      <div class="b101-num">08</div>
+      <span class="b101-icon">🗺️</span>
+      <div class="b101-title">Brand System</div>
+      <p class="b101-desc">All of the above working TOGETHER consistently. A brand system is why you can see a MrBeast thumbnail from across the room without reading anything. Consistency across thumbnails, shorts, social, merch, and video intros builds recognition exponentially — faster than any algorithm trick.</p>
+      <span class="b101-tag">THE WHOLE PACKAGE</span>
+    </div>
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 1 — PALETTES ====== -->
+<div id="palettes" class="palettes-section">
+<div class="container">
+  <div class="sec-eyebrow">01 — Color Identity</div>
+  <h2 class="sec-title">Three <em>Gen Z Palettes</em> — Pick Your Energy</h2>
+  <p class="sec-body">Forget corporate gold and navy. These are built for a generation that learned design on TikTok, Figma, and Notion. Dark base, electric accents, high contrast. Each one hits different — here's the full breakdown.</p>
+
+  <div class="palette-mega-grid">
+
+    <!-- PALETTE 1 — ELECTRIC OBSIDIAN -->
+    <div class="pal-card winner reveal">
+      <div class="pal-swatches">
+        <div class="pal-swatch" style="background:#080808;"><div class="pal-hex-chip">#080808</div></div>
+        <div class="pal-swatch" style="background:#1A1A1A;"><div class="pal-hex-chip">#1A1A1A</div></div>
+        <div class="pal-swatch" style="background:#00F5D4;"><div class="pal-hex-chip" style="color:#000;">#00F5D4</div></div>
+        <div class="pal-swatch" style="background:#7B2FFF;"><div class="pal-hex-chip">#7B2FFF</div></div>
+        <div class="pal-swatch" style="background:#FF3CAC;"><div class="pal-hex-chip">#FF3CAC</div></div>
+      </div>
+      <div class="pal-body">
+        <div class="pal-vibe" style="background:linear-gradient(90deg,#00F5D4,#7B2FFF,#FF3CAC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          ELECTRIC · SMART · UNSTOPPABLE
+        </div>
+        <div class="pal-name" style="background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Electric Obsidian</div>
+        <p class="pal-why">Pure black backgrounds with cyan, violet, and hot pink accents. This is the palette of Notion, Linear, Vercel, and every premium tech product Gen Z actually uses. Cyan = innovation. Violet = depth. Hot pink = energy. Together they say: <em style="color:#F0F0F0;">"We're smart AND interesting."</em> Perfect for your mix of tech reviews, business origin stories, and history — because this palette makes ALL of them feel fresh.</p>
+
+        <div class="pal-score-grid">
+          <div class="pal-score-item">
+            <div class="pal-score-label">Thumbnail Grab</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:95%;background:linear-gradient(90deg,#00F5D4,#7B2FFF);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Gen Z Appeal</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:98%;background:linear-gradient(90deg,#7B2FFF,#FF3CAC);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Distinctiveness</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:90%;background:linear-gradient(90deg,#FF3CAC,#00F5D4);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Versatility</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:92%;background:linear-gradient(90deg,#00F5D4,#7B2FFF);"></div></div>
+          </div>
+        </div>
+
+        <div class="pal-tags">
+          <span class="pal-tag" style="background:rgba(0,245,212,0.1);color:#00F5D4;border:1px solid rgba(0,245,212,0.2);">Tech Reviews ✓</span>
+          <span class="pal-tag" style="background:rgba(123,47,255,0.1);color:#A97FFF;border:1px solid rgba(123,47,255,0.2);">Biz Stories ✓</span>
+          <span class="pal-tag" style="background:rgba(255,60,172,0.1);color:#FF7DC9;border:1px solid rgba(255,60,172,0.2);">History ✓</span>
+          <span class="pal-tag" style="background:rgba(255,255,255,0.05);color:#666;border:1px solid rgba(255,255,255,0.07);">Shorts ✓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PALETTE 2 — SOLAR FLARE -->
+    <div class="pal-card reveal reveal-d1">
+      <div class="pal-swatches">
+        <div class="pal-swatch" style="background:#0A0500;"><div class="pal-hex-chip">#0A0500</div></div>
+        <div class="pal-swatch" style="background:#161008;"><div class="pal-hex-chip">#161008</div></div>
+        <div class="pal-swatch" style="background:#FF6B00;"><div class="pal-hex-chip">#FF6B00</div></div>
+        <div class="pal-swatch" style="background:#FFD600;"><div class="pal-hex-chip" style="color:#000;">#FFD600</div></div>
+        <div class="pal-swatch" style="background:#FF2C2C;"><div class="pal-hex-chip">#FF2C2C</div></div>
+      </div>
+      <div class="pal-body">
+        <div class="pal-vibe" style="background:linear-gradient(90deg,#FF6B00,#FFD600,#FF2C2C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          FIRE · BOLD · ORIGIN STORY ENERGY
+        </div>
+        <div class="pal-name" style="background:linear-gradient(90deg,#FF6B00,#FFD600);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Solar Flare</div>
+        <p class="pal-why">Near-black warm backgrounds (not cool-toned!) with blazing orange, fire-yellow, and red accents. This screams HYPE. It's what big channels use for reaction thumbnails and "STORY of..." videos. Perfect if your content is more storytelling-forward — the "How Jio DESTROYED Indian Telecom" type videos. Less polished, more raw power.</p>
+
+        <div class="pal-score-grid">
+          <div class="pal-score-item">
+            <div class="pal-score-label">Thumbnail Grab</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:97%;background:linear-gradient(90deg,#FF6B00,#FFD600);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Gen Z Appeal</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:78%;background:linear-gradient(90deg,#FFD600,#FF2C2C);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Distinctiveness</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:72%;background:linear-gradient(90deg,#FF2C2C,#FF6B00);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Versatility</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:65%;background:linear-gradient(90deg,#FF6B00,#FFD600);"></div></div>
+          </div>
+        </div>
+
+        <div class="pal-tags">
+          <span class="pal-tag" style="background:rgba(255,107,0,0.1);color:#FF8C33;border:1px solid rgba(255,107,0,0.2);">Tech Reviews ~</span>
+          <span class="pal-tag" style="background:rgba(255,214,0,0.1);color:#FFD600;border:1px solid rgba(255,214,0,0.2);">Biz Stories ✓✓</span>
+          <span class="pal-tag" style="background:rgba(255,44,44,0.1);color:#FF6B6B;border:1px solid rgba(255,44,44,0.2);">History ✓</span>
+          <span class="pal-tag" style="background:rgba(255,255,255,0.05);color:#666;border:1px solid rgba(255,255,255,0.07);">Shorts ✓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PALETTE 3 — INDIGO EMPIRE -->
+    <div class="pal-card reveal reveal-d2">
+      <div class="pal-swatches">
+        <div class="pal-swatch" style="background:#06060F;"><div class="pal-hex-chip">#06060F</div></div>
+        <div class="pal-swatch" style="background:#0D0D1F;"><div class="pal-hex-chip">#0D0D1F</div></div>
+        <div class="pal-swatch" style="background:#3D5AFE;"><div class="pal-hex-chip">#3D5AFE</div></div>
+        <div class="pal-swatch" style="background:#1DE9B6;"><div class="pal-hex-chip" style="color:#000;">#1DE9B6</div></div>
+        <div class="pal-swatch" style="background:#AA00FF;"><div class="pal-hex-chip">#AA00FF</div></div>
+      </div>
+      <div class="pal-body">
+        <div class="pal-vibe" style="background:linear-gradient(90deg,#3D5AFE,#1DE9B6,#AA00FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          DEEP · FUTURISTIC · EMPIRE BUILDER
+        </div>
+        <div class="pal-name" style="background:linear-gradient(90deg,#3D5AFE,#AA00FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Indigo Empire</div>
+        <p class="pal-why">Deep space navy-black with electric blue, emerald teal, and ultra-violet. This is the palette of ambition, scale, and depth. Less "startup", more "empire". Perfect if you want to feel like a documentary mixed with a tech startup. Great for history content — makes ancient stories feel futuristic. This palette has the most "serious intelligent channel" energy of the three.</p>
+
+        <div class="pal-score-grid">
+          <div class="pal-score-item">
+            <div class="pal-score-label">Thumbnail Grab</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:80%;background:linear-gradient(90deg,#3D5AFE,#AA00FF);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Gen Z Appeal</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:85%;background:linear-gradient(90deg,#AA00FF,#1DE9B6);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Distinctiveness</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:88%;background:linear-gradient(90deg,#1DE9B6,#3D5AFE);"></div></div>
+          </div>
+          <div class="pal-score-item">
+            <div class="pal-score-label">Versatility</div>
+            <div class="pal-score-bar"><div class="pal-score-fill" style="width:88%;background:linear-gradient(90deg,#3D5AFE,#1DE9B6);"></div></div>
+          </div>
+        </div>
+
+        <div class="pal-tags">
+          <span class="pal-tag" style="background:rgba(61,90,254,0.1);color:#7B8FFF;border:1px solid rgba(61,90,254,0.2);">Tech Reviews ✓✓</span>
+          <span class="pal-tag" style="background:rgba(29,233,182,0.1);color:#1DE9B6;border:1px solid rgba(29,233,182,0.2);">Biz Stories ✓</span>
+          <span class="pal-tag" style="background:rgba(170,0,255,0.1);color:#CC66FF;border:1px solid rgba(170,0,255,0.2);">History ✓✓</span>
+          <span class="pal-tag" style="background:rgba(255,255,255,0.05);color:#666;border:1px solid rgba(255,255,255,0.07);">Shorts ✓</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Why not use light backgrounds? -->
+  <div style="margin-top:2rem;padding:1.5rem 2rem;background:rgba(255,60,172,0.06);border:1px solid rgba(255,60,172,0.15);border-radius:10px;" class="reveal">
+    <div class="sec-eyebrow" style="color:#FF7DC9;">⚠️ Why Dark Backgrounds ONLY?</div>
+    <p style="color:#666;font-size:0.9rem;line-height:1.8;">YouTube is a dark UI. When your thumbnail sits in a feed of mostly dark content, a white-background thumbnail stands out — BUT it also reads as "generic". Dark thumbnails with electric accents read as <strong style="color:#F0F0F0;">premium, intentional, and modern</strong>. Every top-tier educational channel (Kurzgesagt, Wendover, Johnny Harris) uses dark or mid-tone backgrounds. You want to be in THAT tier — not the "info-graphic on white" tier. Additionally, dark backgrounds are dramatically easier on the eye for long video consumption.</p>
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 2 — COLOR SYSTEM ====== -->
+<div id="colors" class="color-system-section">
+<div class="container">
+  <div class="sec-eyebrow">02 — Color Deep Dive</div>
+  <h2 class="sec-title">What Each Color <em>Actually Does</em></h2>
+  <p class="sec-body">Colors aren't decoration — they're communication. Here's EVERY color in the Electric Obsidian system with its job, usage rules, and the psychology behind it.</p>
+
+  <div class="color-anatomy">
+    <div class="color-role-group reveal">
+      <div class="crg-label">Backgrounds & Surfaces</div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#080808;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Void Black <span style="font-family:monospace;font-size:0.75rem;color:#666;">#080808</span></div>
+          <div class="crg-role">Page background ONLY. Never use for text or elements. This is your canvas — the void everything else appears on. Slightly off-pure-black so it doesn't look like a loading error.</div>
+        </div>
+      </div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#111111;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Deep Surface <span style="font-family:monospace;font-size:0.75rem;color:#666;">#111111</span></div>
+          <div class="crg-role">Card backgrounds, video overlays, section backgrounds. Creates depth without the harsh contrast of pure black on elements.</div>
+        </div>
+      </div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#1A1A1A;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Card Surface <span style="font-family:monospace;font-size:0.75rem;color:#666;">#1A1A1A</span></div>
+          <div class="crg-role">Raised surfaces, hover states, subtle containers. Gives a 3-layer depth system: Void → Deep → Card.</div>
+        </div>
+      </div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:rgba(255,255,255,0.07);border:1px dashed #333;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Ghost Border <span style="font-family:monospace;font-size:0.75rem;color:#666;">rgba(255,255,255,0.07)</span></div>
+          <div class="crg-role">All borders/dividers. Never use solid white borders — they look cheap. 7% opacity white = subtle structure that doesn't fight the accents.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-role-group reveal reveal-d1">
+      <div class="crg-label">Accent Colors — The Energy</div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#00F5D4;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Cyber Cyan <span style="font-family:monospace;font-size:0.75rem;color:#666;">#00F5D4</span></div>
+          <div class="crg-role">PRIMARY accent. Use for: logos, CTA buttons, highlights, key text, animated elements, active states. This is your hero colour — everything else supports it. Limit to ~5% of any layout.</div>
+        </div>
+      </div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#7B2FFF;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Deep Violet <span style="font-family:monospace;font-size:0.75rem;color:#666;">#7B2FFF</span></div>
+          <div class="crg-role">SECONDARY accent. Use for: category tags, background glow effects, gradients paired with cyan. Never compete with cyan — use violet when cyan is already present.</div>
+        </div>
+      </div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#FF3CAC;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Hot Pink <span style="font-family:monospace;font-size:0.75rem;color:#FF3CAC;">✦ ENERGY COLOUR</span> <span style="font-family:monospace;font-size:0.75rem;color:#666;">#FF3CAC</span></div>
+          <div class="crg-role">TERTIARY accent. Use sparingly for maximum impact — episode labels, trending tags, breaking news elements. This colour says "pay attention RIGHT NOW." Don't overuse.</div>
+        </div>
+      </div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#F0F0F0;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Off-White <span style="font-family:monospace;font-size:0.75rem;color:#666;">#F0F0F0</span></div>
+          <div class="crg-role">ALL primary text. Never use pure #FFFFFF — it vibrates against dark backgrounds and strains eyes. Off-white is softer, more premium, and easier to read long-form.</div>
+        </div>
+      </div>
+      <div class="crg-item">
+        <div class="crg-swatch" style="background:#666666;"></div>
+        <div class="crg-info">
+          <div class="crg-name">Stone Gray <span style="font-family:monospace;font-size:0.75rem;color:#666;">#666666</span></div>
+          <div class="crg-role">ALL secondary text — captions, metadata, dates, subtitles. Enough contrast to read, enough subtlety to not compete with primary content.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color Psychology Cards -->
+  <div class="sec-eyebrow" style="margin-top:1rem;">The Psychology Behind the Colors</div>
+  <div class="color-psychology">
+    <div class="cp-card reveal">
+      <div class="cp-dot" style="background:#00F5D4;box-shadow:0 0 12px rgba(0,245,212,0.5);"></div>
+      <div class="cp-title" style="color:#00F5D4;">Cyan = Future</div>
+      <p class="cp-desc">Cyan/teal is the colour of technology, clarity, and modernity. It's used by Figma, Notion, Linear, and Vercel — the tools Gen Z actually builds with. It feels innovative without being cold. For a channel covering tech reviews and business stories, it says: "We understand the future."</p>
+    </div>
+    <div class="cp-card reveal reveal-d1">
+      <div class="cp-dot" style="background:#7B2FFF;box-shadow:0 0 12px rgba(123,47,255,0.5);"></div>
+      <div class="cp-title" style="color:#A97FFF;">Violet = Depth</div>
+      <p class="cp-desc">Purple has always signified mystery, royalty, and intellectual depth. In a Gen Z context it means creativity and unconventionality. For history content — empires, origin stories, how industries were built — violet says "there's more going on beneath the surface." It's the colour of curiosity.</p>
+    </div>
+    <div class="cp-card reveal reveal-d2">
+      <div class="cp-dot" style="background:#FF3CAC;box-shadow:0 0 12px rgba(255,60,172,0.5);"></div>
+      <div class="cp-title" style="color:#FF7DC9;">Hot Pink = Energy</div>
+      <p class="cp-desc">This is the colour of NOW. It's on every Gen Z brand, every viral app, every trending thing in 2026. Used sparingly, it injects electricity into your layouts — like a "breaking" label or a key stat highlight. It's not feminine or aggressive; in this dark context it's pure, focused ENERGY.</p>
+    </div>
+    <div class="cp-card reveal">
+      <div class="cp-dot" style="background:#080808;box-shadow:0 0 12px rgba(255,255,255,0.1);border:1px solid #333;"></div>
+      <div class="cp-title">Black = Premium</div>
+      <p class="cp-desc">Apple. Spotify. Nike. Premium brands go dark because black makes everything around it look more expensive. It's also the ultimate neutral — your vibrant accents POP harder against black than against any other background. In a YouTube feed full of colourful thumbnails, a sharp dark thumbnail demands attention differently.</p>
+    </div>
+  </div>
+
+  <!-- Contrast Check -->
+  <div class="contrast-checker reveal" style="margin-top:2.5rem;">
+    <div style="padding:1rem 1.5rem;font-size:0.65rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#666;border-bottom:1px solid var(--e-border);">
+      ACCESSIBILITY / CONTRAST CHECK — Your thumbnails must be readable
+    </div>
+    <div class="contrast-row">
+      <div class="contrast-swatch-pair">
+        <div class="csp-bg" style="background:#080808;"><span style="font-size:1.1rem;font-weight:800;color:#00F5D4;">A</span></div>
+        <div class="csp-bg" style="background:#00F5D4;"><span style="font-size:1.1rem;font-weight:800;color:#080808;">A</span></div>
+      </div>
+      <span class="contrast-label">Cyan on Black / Black on Cyan — Primary combo for headlines</span>
+      <span class="contrast-badge pass">✓ PASS — 11.5:1</span>
+    </div>
+    <div class="contrast-row">
+      <div class="contrast-swatch-pair">
+        <div class="csp-bg" style="background:#080808;"><span style="font-size:1.1rem;font-weight:800;color:#F0F0F0;">A</span></div>
+      </div>
+      <span class="contrast-label">Off-White on Black — Body text, thumbnail text</span>
+      <span class="contrast-badge pass">✓ PASS — 18.2:1</span>
+    </div>
+    <div class="contrast-row">
+      <div class="contrast-swatch-pair">
+        <div class="csp-bg" style="background:#080808;"><span style="font-size:1.1rem;font-weight:800;color:#7B2FFF;">A</span></div>
+      </div>
+      <span class="contrast-label">Violet on Black — Use for decorative only, not small text</span>
+      <span class="contrast-badge warn">⚠ 4.1:1 — Use bold only</span>
+    </div>
+    <div class="contrast-row">
+      <div class="contrast-swatch-pair">
+        <div class="csp-bg" style="background:#080808;"><span style="font-size:1.1rem;font-weight:800;color:#FF3CAC;">A</span></div>
+      </div>
+      <span class="contrast-label">Hot Pink on Black — Labels and accents</span>
+      <span class="contrast-badge pass">✓ PASS — 6.8:1</span>
+    </div>
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 3 — TYPOGRAPHY ====== -->
+<div id="typography" class="type-section">
+<div class="container">
+  <div class="sec-eyebrow">03 — Typography System</div>
+  <h2 class="sec-title">The <em>Font Stack</em> — Chosen from the Web</h2>
+  <p class="sec-body">After researching 2026 font trends — Film Serifs, Variable fonts, Wide condensed, and Gen Z editorial styles — here's the A&A system. Three fonts. Three jobs. Zero boring choices. ALL free from Google Fonts.</p>
+
+  <div class="font-cards">
+
+    <!-- Bebas Neue -->
+    <div class="font-card reveal">
+      <div class="fc-role" style="color:#00F5D4;">Display / Thumbnails / Logo</div>
+      <div class="fc-specimen">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:0.9;letter-spacing:0.04em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+          ZERO<br>TO HERO
+        </div>
+      </div>
+      <div class="fc-meta">
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Font Name</div>
+          <div class="fc-meta-val">Bebas Neue</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Source</div>
+          <div class="fc-meta-val">Google Fonts ✓ Free</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Why It Works</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Used by Nike, Dribbble, and hundreds of top YouTubers. All-caps condensed = maximum impact in minimal space. Perfect for thumbnails where you have 2 seconds to catch an eye. Bold but not aggressive — confident.</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Use For</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Logo, thumbnail headlines, video title cards, channel art big text, Shorts overlay text.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Syne -->
+    <div class="font-card reveal reveal-d1">
+      <div class="fc-role" style="color:#7B2FFF;">Section Headers / Sub-Headlines</div>
+      <div class="fc-specimen">
+        <div style="font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;line-height:1.1;color:#F0F0F0;">
+          How Jio Changed<br>Everything Forever
+        </div>
+      </div>
+      <div class="fc-meta">
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Font Name</div>
+          <div class="fc-meta-val">Syne</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Source</div>
+          <div class="fc-meta-val">Google Fonts ✓ Free</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Why It Works</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Syne is a 2026 trending font — originally designed for a cultural arts festival, it combines geometric precision with personality. It's bold without being aggressive, modern without being cold. Uniquely, its weight 800 has quirky character shapes that make it memorable.</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Use For</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Video section title cards, description headlines, website headings, social media post titles.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fraunces Italic -->
+    <div class="font-card reveal reveal-d2">
+      <div class="fc-role" style="color:#FF3CAC;">Accent / Emphasis / Pull Quotes</div>
+      <div class="fc-specimen">
+        <div style="font-family:'Fraunces',serif;font-style:italic;font-size:2.5rem;font-weight:700;line-height:1.1;">
+          <span style="color:#F0F0F0;">The </span><span style="color:#00F5D4;">story</span><span style="color:#F0F0F0;"> they<br>never told you.</span>
+        </div>
+      </div>
+      <div class="fc-meta">
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Font Name</div>
+          <div class="fc-meta-val">Fraunces Italic</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Source</div>
+          <div class="fc-meta-val">Google Fonts ✓ Free</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Why It Works</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Fraunces is a "soft serif" with optical size — it's designed to look different at different sizes. In italic, it has movie-title energy. 2026 trend: Film Serifs. Perfect for history episodes and dramatic pulls. Creates beautiful contrast against the geometric Syne and blocky Bebas.</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Use For</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Episode subtitles, pull-quotes, "and then..." moments in visual storytelling, logo ampersand.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outfit -->
+    <div class="font-card reveal">
+      <div class="fc-role" style="color:#F0F0F0;">Body / UI / Everything Else</div>
+      <div class="fc-specimen">
+        <div style="font-family:'Outfit',sans-serif;font-size:1rem;font-weight:300;line-height:1.8;color:#666;max-width:280px;">
+          The Tata Group was founded in 1868. That's 155 years of business decisions — most of which we've never been told about. Today we're diving into the <strong style="color:#F0F0F0;font-weight:600;">real story</strong> behind India's largest conglomerate.
+        </div>
+      </div>
+      <div class="fc-meta">
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Font Name</div>
+          <div class="fc-meta-val">Outfit</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Source</div>
+          <div class="fc-meta-val">Google Fonts ✓ Free</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Why It Works</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Outfit is a 2026 rising star — geometric, friendly, and exceptionally readable at small sizes. It's what modern apps like Framer and newer SaaS products use. Unlike Inter (overused) or Roboto (Google defaults), Outfit has personality. 9 weights means incredible flexibility.</div>
+        </div>
+        <div class="fc-meta-item">
+          <div class="fc-meta-label">Use For</div>
+          <div class="fc-meta-val" style="color:#666;font-size:0.75rem;line-height:1.5;">Video descriptions, website body text, captions, lower-thirds, UI labels, everything readable.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Type Scale -->
+  <h3 style="font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;margin-top:3rem;margin-bottom:0.5rem;">The Type Scale — Sizes for Every Situation</h3>
+  <p style="color:#666;font-size:0.875rem;margin-bottom:1rem;">Use EXACTLY these sizes. Consistency in scale = professional look. Don't eyeball it.</p>
+  <div class="type-scale reveal">
+    <div class="ts-row">
+      <div class="ts-meta">Usage: <span>Hero/Main Thumbnail</span> &nbsp;|&nbsp; Font: <span>Bebas Neue</span> &nbsp;|&nbsp; Size: <span>80–120px</span></div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);letter-spacing:0.04em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">HOW INDIA LOST ₹10,000 CRORE</div>
+    </div>
+    <div class="ts-row">
+      <div class="ts-meta">Usage: <span>Video Section Header</span> &nbsp;|&nbsp; Font: <span>Syne 800</span> &nbsp;|&nbsp; Size: <span>40–56px</span></div>
+      <div style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:800;color:#F0F0F0;line-height:1.1;">The Business That Changed Everything</div>
+    </div>
+    <div class="ts-row">
+      <div class="ts-meta">Usage: <span>Pull Quote / Italic Accent</span> &nbsp;|&nbsp; Font: <span>Fraunces Italic 600</span> &nbsp;|&nbsp; Size: <span>28–36px</span></div>
+      <div style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);font-weight:600;color:#F0F0F0;">The story starts in 1947 — before the company even existed.</div>
+    </div>
+    <div class="ts-row">
+      <div class="ts-meta">Usage: <span>Sub-heading / Card Title</span> &nbsp;|&nbsp; Font: <span>Syne 700</span> &nbsp;|&nbsp; Size: <span>20–24px</span></div>
+      <div style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;color:#F0F0F0;">Phase 1 — The Zero Years (1990–1998)</div>
+    </div>
+    <div class="ts-row">
+      <div class="ts-meta">Usage: <span>Category Tag / Label</span> &nbsp;|&nbsp; Font: <span>Outfit 700</span> &nbsp;|&nbsp; Size: <span>10–12px</span></div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <span style="font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:4px;background:rgba(0,245,212,0.1);color:#00F5D4;border:1px solid rgba(0,245,212,0.2);">TECH STORY</span>
+        <span style="font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:4px;background:rgba(123,47,255,0.1);color:#A97FFF;border:1px solid rgba(123,47,255,0.2);">BIZ HISTORY</span>
+        <span style="font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:4px;background:rgba(255,60,172,0.1);color:#FF7DC9;border:1px solid rgba(255,60,172,0.2);">PHONE REVIEW</span>
+      </div>
+    </div>
+    <div class="ts-row">
+      <div class="ts-meta">Usage: <span>Body Text / Descriptions</span> &nbsp;|&nbsp; Font: <span>Outfit 300/400</span> &nbsp;|&nbsp; Size: <span>16–18px</span></div>
+      <div style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:300;color:#666;line-height:1.8;max-width:500px;">In 2001, Jio didn't exist. By 2016, it had disrupted an entire industry in 90 days. This is the tech, business strategy, and historical context that nobody has properly explained — until now.</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 4 — LOGO SYSTEM ====== -->
+<div id="logo" class="logo-section">
+<div class="container">
+  <div class="sec-eyebrow">04 — Logo System</div>
+  <h2 class="sec-title">Your Logo — <em>Three Forms</em> for Every Use</h2>
+  <p class="sec-body">A professional brand never has just ONE logo — it has a logo system. Here are the three versions you need and exactly when to use each. Every version must work across all contexts: thumbnails, merch, intros, watermarks.</p>
+
+  <div class="logo-explain-grid">
+    <div class="le-card reveal">
+      <div class="le-num">01</div>
+      <div class="le-title">Wordmark</div>
+      <p class="le-body">The full "ANAND & ARADHYA" text treatment. Used for: channel banner, website header, intro cards, press mentions. This is your most recognisable form — the full name makes the brand explicit.</p>
+    </div>
+    <div class="le-card reveal reveal-d1">
+      <div class="le-num">02</div>
+      <div class="le-title">Monogram Icon</div>
+      <p class="le-body">The "A&A" compact mark. Used for: profile picture, watermarks on video, favicon, merch, app icon. Small enough to use at 32px, recognisable enough to stand alone once the channel is known.</p>
+    </div>
+    <div class="le-card reveal reveal-d2">
+      <div class="le-num">03</div>
+      <div class="le-title">Episode Badge</div>
+      <p class="le-body">A micro version with episode/category info. Used for: thumbnail corner badge, lower-third in video, YouTube card. This is how you build series identity — every episode in a series looks connected.</p>
+    </div>
+    <div class="le-card reveal">
+      <div class="le-num">04</div>
+      <div class="le-title">Dark / Light Variants</div>
+      <p class="le-body">Every logo form must exist in both dark-background and light-background versions. Dark = most videos. Light = merch, print, collab content on light platforms. Never put the dark logo on a dark bg — it disappears.</p>
+    </div>
+  </div>
+
+  <div class="logo-concepts-grid">
+    <!-- Concept 1 — Full Wordmark Dark -->
+    <div class="logo-concept reveal">
+      <div class="logo-stage dark">
+        <svg viewBox="0 0 320 100" width="280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cg1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#00F5D4"/>
+              <stop offset="100%" style="stop-color:#7B2FFF"/>
+            </linearGradient>
+          </defs>
+          <text x="50%" y="52" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="46" letter-spacing="4" fill="#F0F0F0">ANAND</text>
+          <text x="50%" y="55" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="22" fill="url(#cg1)" dy="22" letter-spacing="1">&amp; Aradhya</text>
+          <rect x="60" y="84" width="200" height="1" fill="url(#cg1)" opacity="0.4"/>
+          <text x="50%" y="97" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7" fill="#666" letter-spacing="4" font-weight="700">TECH · BUSINESS · HISTORY</text>
+        </svg>
+      </div>
+      <div class="logo-caption">
+        Concept A — Full Wordmark (Dark)
+        <span style="color:#00F5D4;font-size:0.6rem;">★ START HERE</span>
+      </div>
+    </div>
+
+    <!-- Concept 2 — Monogram -->
+    <div class="logo-concept reveal reveal-d1">
+      <div class="logo-stage mid">
+        <svg viewBox="0 0 200 120" width="180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cg2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#00F5D4"/>
+              <stop offset="50%" style="stop-color:#7B2FFF"/>
+              <stop offset="100%" style="stop-color:#FF3CAC"/>
+            </linearGradient>
+          </defs>
+          <rect x="55" y="10" width="90" height="90" rx="18" fill="none" stroke="url(#cg2)" stroke-width="1.5"/>
+          <text x="100" y="72" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="42" letter-spacing="2" fill="url(#cg2)">A²</text>
+          <text x="100" y="110" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7" fill="#666" letter-spacing="5" font-weight="700">ANAND &amp; ARADHYA</text>
+        </svg>
+      </div>
+      <div class="logo-caption">
+        Concept B — Monogram Icon (Profile Pic / Watermark)
+        <span style="color:#7B2FFF;font-size:0.6rem;">ICON MARK</span>
+      </div>
+    </div>
+
+    <!-- Concept 3 — Light version -->
+    <div class="logo-concept reveal reveal-d2">
+      <div class="logo-stage light">
+        <svg viewBox="0 0 320 100" width="280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cg3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#7B2FFF"/>
+              <stop offset="100%" style="stop-color:#FF3CAC"/>
+            </linearGradient>
+          </defs>
+          <text x="50%" y="52" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="46" letter-spacing="4" fill="#111">ANAND</text>
+          <text x="50%" y="55" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="22" fill="url(#cg3)" dy="22" letter-spacing="1">&amp; Aradhya</text>
+          <rect x="60" y="84" width="200" height="1" fill="url(#cg3)" opacity="0.5"/>
+          <text x="50%" y="97" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7" fill="#888" letter-spacing="4" font-weight="700">TECH · BUSINESS · HISTORY</text>
+        </svg>
+      </div>
+      <div class="logo-caption">
+        Concept C — Light Variant (Merch / Print)
+        <span style="color:#FF3CAC;font-size:0.6rem;">LIGHT MODE</span>
+      </div>
+    </div>
+
+    <!-- Concept 4 — Episode Badge -->
+    <div class="logo-concept reveal">
+      <div class="logo-stage dark">
+        <div style="display:flex;flex-direction:column;gap:1rem;align-items:center;">
+          <div style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(0,245,212,0.08);border:1px solid rgba(0,245,212,0.2);border-radius:6px;padding:0.5rem 1rem;">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.05em;color:#00F5D4;">A&A</span>
+            <span style="width:1px;height:20px;background:rgba(0,245,212,0.2);"></span>
+            <div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#666;">EPISODE 12</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.6rem;font-weight:700;color:#F0F0F0;">BIZ ORIGINS</div>
+            </div>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:0.6rem;background:rgba(255,60,172,0.08);border:1px solid rgba(255,60,172,0.2);border-radius:6px;padding:0.5rem 1rem;">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.05em;color:#FF3CAC;">A&A</span>
+            <span style="width:1px;height:20px;background:rgba(255,60,172,0.2);"></span>
+            <div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#666;">TECH REVIEW</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.6rem;font-weight:700;color:#F0F0F0;">PHONE SPECIAL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="logo-caption">
+        Concept D — Episode Badge System (Thumbnails)
+        <span style="color:#FF3CAC;font-size:0.6rem;">SERIES BRAND</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 5 — ACCENT ELEMENTS ====== -->
+<div id="accents" class="accents-section">
+<div class="container">
+  <div class="sec-eyebrow">05 — Accent Elements</div>
+  <h2 class="sec-title">The <em>Visual Spice</em> — Accents Explained</h2>
+  <p class="sec-body">Accents are the design elements that separate "I threw some text on a background" from "this looks like a real brand." Each type of accent has a specific purpose — here's every one in your system.</p>
+
+  <div class="accent-grid">
+
+    <div class="accent-card reveal">
+      <div class="accent-demo">
+        <div class="gradient-bar"></div>
+      </div>
+      <div class="accent-title">Gradient Bar</div>
+      <p class="accent-desc">A 2-3px horizontal line in cyan→violet→pink gradient. Used as: section dividers, under headlines, top of cards, thumbnail borders. Creates visual richness without adding clutter.</p>
+    </div>
+
+    <div class="accent-card reveal reveal-d1">
+      <div class="accent-demo">
+        <div class="glow-text">A&A</div>
+      </div>
+      <div class="accent-title">Text Glow</div>
+      <p class="accent-desc">A CSS text-shadow that makes key text appear to glow. Use ONLY on the logo or single important words in thumbnail headlines. Never overuse — if everything glows, nothing stands out.</p>
+    </div>
+
+    <div class="accent-card reveal reveal-d2">
+      <div class="accent-demo">
+        <div class="border-glow">⚡</div>
+      </div>
+      <div class="accent-title">Gradient Border</div>
+      <p class="accent-desc">Cards or elements with a transparent background but a gradient outline. Achieves visual elevation without solid backgrounds. Great for profile icons, featured cards, and social post frames.</p>
+    </div>
+
+    <div class="accent-card reveal">
+      <div class="accent-demo">
+        <div class="tag-demo">
+          <span class="td" style="background:rgba(0,245,212,0.1);color:#00F5D4;border:1px solid rgba(0,245,212,0.2);">TECH</span>
+          <span class="td" style="background:rgba(123,47,255,0.15);color:#A97FFF;border:1px solid rgba(123,47,255,0.25);">BIZ</span>
+          <span class="td" style="background:rgba(255,60,172,0.1);color:#FF7DC9;border:1px solid rgba(255,60,172,0.2);">HIST</span>
+        </div>
+      </div>
+      <div class="accent-title">Category Tags</div>
+      <p class="accent-desc">Small uppercase labels that categorise content. Colour-coded by pillar: Cyan = Tech, Violet = Business, Pink = History. Used on thumbnails, video chapters, website content cards. Builds a visual content taxonomy.</p>
+    </div>
+
+    <div class="accent-card reveal reveal-d1">
+      <div class="accent-demo">
+        <div class="pill-demo">
+          <span class="pd" style="background:rgba(0,245,212,0.1);color:#00F5D4;border:1px solid rgba(0,245,212,0.2);">⚡ New</span>
+          <span class="pd" style="background:rgba(255,60,172,0.1);color:#FF7DC9;border:1px solid rgba(255,60,172,0.2);">🔥 Trending</span>
+        </div>
+      </div>
+      <div class="accent-title">Status Pills</div>
+      <p class="accent-desc">Rounded pill badges for status indicators — "New Drop", "Live", "Trending". These are used in video descriptions, community posts, and shorts. The rounded corners contrast with your sharp card design — creates variety.</p>
+    </div>
+
+    <div class="accent-card reveal reveal-d2">
+      <div class="accent-demo">
+        <div class="underline-demo">Origin Story</div>
+      </div>
+      <div class="accent-title">Gradient Underline</div>
+      <p class="accent-desc">A keyword in a headline is underlined with your gradient (cyan to violet). Makes a specific word pop without changing its colour. Used in episode title cards, chapter markers, and key terms in explainer graphics.</p>
+    </div>
+
+    <div class="accent-card reveal">
+      <div class="accent-demo">
+        <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#00F5D4;display:flex;align-items:center;gap:0.5rem;">
+          <span style="display:block;width:20px;height:2px;background:#00F5D4;border-radius:2px;"></span>
+          EPISODE 04
+        </div>
+      </div>
+      <div class="accent-title">Eyebrow Lines</div>
+      <p class="accent-desc">A short horizontal line before a label — like "— EPISODE 04". This is a classic editorial technique used by newspapers, magazines, and premium channels. It groups label + title visually without needing borders or boxes.</p>
+    </div>
+
+    <div class="accent-card reveal reveal-d1">
+      <div class="accent-demo" style="background:linear-gradient(135deg,rgba(0,245,212,0.06),rgba(123,47,255,0.08));position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,245,212,0.08) 1px,transparent 1px);background-size:12px 12px;"></div>
+        <span style="font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:700;color:#666;position:relative;z-index:1;">bg texture</span>
+      </div>
+      <div class="accent-title">Grid / Dot Texture</div>
+      <p class="accent-desc">A subtle dot or grid pattern as a background texture. Adds visual depth without adding "noise". Used in hero sections and full-bleed video graphics. Classic in tech branding — Vercel, Linear, and Loom all use this approach.</p>
+    </div>
+
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 6 — THUMBNAIL MOCKUPS ====== -->
+<div id="mockups" class="thumbs-section">
+<div class="container">
+  <div class="sec-eyebrow">06 — Real Content Mockups</div>
+  <h2 class="sec-title">The Brand In <em>Action</em></h2>
+  <p class="sec-body">Here's how your actual content types look with this system — business origin stories, phone reviews, and history episodes. Notice how each uses the same palette but feels different in energy.</p>
+
+  <div class="thumb-masonry">
+
+    <!-- Business Origin Story -->
+    <div class="thumb reveal">
+      <div class="thumb-bg" style="background:linear-gradient(135deg,#080808 0%,#1A1A2E 100%);"></div>
+      <div class="thumb-over" style="background:radial-gradient(ellipse at 70% 50%, rgba(0,245,212,0.06) 0%,transparent 60%);"></div>
+      <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.06;" viewBox="0 0 400 225">
+        <polyline points="30,190 100,130 180,160 260,70 340,40 400,55" fill="none" stroke="#00F5D4" stroke-width="2"/>
+        <circle cx="260" cy="70" r="5" fill="#00F5D4"/>
+        <circle cx="340" cy="40" r="5" fill="#00F5D4"/>
+      </svg>
+      <div class="thumb-content">
+        <div class="thumb-cat" style="background:rgba(123,47,255,0.15);color:#A97FFF;border:1px solid rgba(123,47,255,0.25);">⚡ BIZ ORIGIN</div>
+        <div>
+          <div class="thumb-main" style="color:#F0F0F0;">HOW JAMNALAL<br><span style="color:#00F5D4;">BAJAJ</span> BUILT<br>AN EMPIRE</div>
+        </div>
+        <div class="thumb-bottom">
+          <span class="thumb-ep">S1 · EP 03</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.05em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A&A</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech + History hybrid -->
+    <div class="thumb reveal reveal-d1">
+      <div class="thumb-bg" style="background:linear-gradient(135deg,#080808 0%,#1A0A1E 100%);"></div>
+      <div class="thumb-over" style="background:radial-gradient(ellipse at 30% 60%, rgba(123,47,255,0.12) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%, rgba(255,60,172,0.06) 0%,transparent 60%);"></div>
+      <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.05;" viewBox="0 0 400 225">
+        <circle cx="320" cy="112" r="90" fill="none" stroke="#7B2FFF" stroke-width="1"/>
+        <circle cx="320" cy="112" r="60" fill="none" stroke="#7B2FFF" stroke-width="0.5"/>
+        <line x1="0" y1="112" x2="400" y2="112" stroke="#7B2FFF" stroke-width="0.5"/>
+        <line x1="200" y1="0" x2="200" y2="225" stroke="#7B2FFF" stroke-width="0.5"/>
+      </svg>
+      <div class="thumb-content">
+        <div class="thumb-cat" style="background:rgba(255,60,172,0.12);color:#FF7DC9;border:1px solid rgba(255,60,172,0.2);">🔥 TECH HISTORY</div>
+        <div>
+          <div class="thumb-main" style="color:#F0F0F0;">THE REAL<br><span style="color:#FF3CAC;">HISTORY</span> OF<br>JIO IN 90 DAYS</div>
+        </div>
+        <div class="thumb-bottom">
+          <span class="thumb-ep">S2 · EP 01 · 24 MIN</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.05em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A&A</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone Review -->
+    <div class="thumb reveal reveal-d2">
+      <div class="thumb-bg" style="background:#080808;"></div>
+      <div class="thumb-over" style="background:radial-gradient(ellipse at 50% 80%, rgba(0,245,212,0.1) 0%,transparent 60%);"></div>
+      <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.07;" viewBox="0 0 400 225">
+        <rect x="160" y="20" width="80" height="180" rx="10" fill="none" stroke="#00F5D4" stroke-width="1"/>
+        <rect x="175" y="35" width="50" height="100" rx="3" fill="none" stroke="#00F5D4" stroke-width="0.5"/>
+      </svg>
+      <div class="thumb-content">
+        <div class="thumb-cat" style="background:rgba(0,245,212,0.1);color:#00F5D4;border:1px solid rgba(0,245,212,0.2);">📱 TECH REVIEW</div>
+        <div>
+          <div class="thumb-main" style="color:#F0F0F0;">I USED THIS<br><span style="color:#00F5D4;">₹15,000</span> PHONE<br>FOR 30 DAYS</div>
+        </div>
+        <div class="thumb-bottom">
+          <span class="thumb-ep">REVIEW · 2026</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.05em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A&A</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Deep Dive -->
+    <div class="thumb reveal">
+      <div class="thumb-bg" style="background:linear-gradient(135deg,#060812 0%,#0D0D20 100%);"></div>
+      <div class="thumb-over" style="background:radial-gradient(ellipse at 20% 20%, rgba(0,245,212,0.04) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%, rgba(255,60,172,0.06) 0%,transparent 50%);"></div>
+      <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.06;" viewBox="0 0 400 225">
+        <line x1="0" y1="0" x2="400" y2="225" stroke="#7B2FFF" stroke-width="0.5"/>
+        <line x1="400" y1="0" x2="0" y2="225" stroke="#7B2FFF" stroke-width="0.5"/>
+        <circle cx="200" cy="112" r="80" fill="none" stroke="#7B2FFF" stroke-width="0.5"/>
+      </svg>
+      <div class="thumb-content">
+        <div class="thumb-cat" style="background:rgba(123,47,255,0.12);color:#A97FFF;border:1px solid rgba(123,47,255,0.2);">🏛 DEEP DIVE</div>
+        <div>
+          <div class="thumb-main" style="color:#F0F0F0;">WHY INDIA<br>ALMOST HAD<br><span style="color:#7B2FFF;">NO INTERNET</span></div>
+        </div>
+        <div class="thumb-bottom">
+          <span class="thumb-ep">HISTORY SPECIAL</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.05em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A&A</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shorts Thumbnail -->
+    <div class="thumb reveal reveal-d1" style="aspect-ratio:9/16;max-width:160px;">
+      <div class="thumb-bg" style="background:#080808;"></div>
+      <div class="thumb-over" style="background:radial-gradient(ellipse at 50% 30%, rgba(0,245,212,0.12) 0%,transparent 60%);"></div>
+      <div class="thumb-content">
+        <div class="thumb-cat" style="background:rgba(255,60,172,0.12);color:#FF7DC9;border:1px solid rgba(255,60,172,0.2);">⚡ SHORT</div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;line-height:1;letter-spacing:0.04em;color:#F0F0F0;">DID YOU KNOW<br><span style="color:#00F5D4;">NOKIA</span><br>BUILT THE<br>FIRST CAMERA<br>PHONE?</div>
+        </div>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.05em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;align-self:flex-end;">A&A</span>
+      </div>
+    </div>
+
+    <!-- Collab / Special -->
+    <div class="thumb reveal reveal-d2">
+      <div class="thumb-bg" style="background:linear-gradient(135deg,#0A0005 0%,#100515 100%);"></div>
+      <div class="thumb-over" style="background:radial-gradient(ellipse at 50% 50%, rgba(255,60,172,0.1) 0%,transparent 60%);"></div>
+      <div class="thumb-content">
+        <div class="thumb-cat" style="background:rgba(255,60,172,0.12);color:#FF7DC9;border:1px solid rgba(255,60,172,0.2);">🔥 SERIES FINALE</div>
+        <div>
+          <div class="thumb-main" style="color:#F0F0F0;">THE <span style="color:#FF3CAC;">₹1 LAKH CRORE</span><br>MISTAKE INDIA<br>NEVER TALKS ABOUT</div>
+        </div>
+        <div class="thumb-bottom">
+          <span class="thumb-ep">FINALE · S1</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.05em;background:linear-gradient(90deg,#00F5D4,#7B2FFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">A&A</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 7 — RULES ====== -->
+<div id="rules" class="rules-section">
+<div class="container">
+  <div class="sec-eyebrow">07 — Brand Rules</div>
+  <h2 class="sec-title">The <em>Hard Rules</em> — Non-Negotiable</h2>
+  <p class="sec-body">Consistency is what transforms a colour choice into a brand. These rules are what protect the identity you're building. Break them and you start over.</p>
+
+  <div class="rules-big-grid">
+    <div class="rules-block reveal">
+      <div class="rules-block-header do-header">✓ ALWAYS DO THESE</div>
+      <ul class="rules-list do-list">
+        <li>Use <strong>#080808</strong> or <strong>#111111</strong> as background — always dark</li>
+        <li>Lead with <strong>Bebas Neue</strong> on all thumbnails — it's your thumbnail font</li>
+        <li>Use Cyan <strong>sparingly</strong> — hero text and logo only, not decorative fills</li>
+        <li>Apply category colour coding: Cyan = Tech, Violet = Biz, Pink = History</li>
+        <li>Use <strong>Outfit Light (300)</strong> for all body/description text</li>
+        <li>Include the <strong>A&A badge</strong> on every thumbnail — bottom right corner</li>
+        <li>Keep a consistent thumbnail <strong>template structure</strong> (tag → title → badge)</li>
+        <li>Use <strong>gradient borders</strong> instead of solid white borders</li>
+        <li>Use <strong>off-white (#F0F0F0)</strong> — never pure white (#FFFFFF)</li>
+        <li>Test every thumbnail at <strong>120×68px</strong> (mobile feed size) before uploading</li>
+      </ul>
+    </div>
+    <div class="rules-block reveal reveal-d1">
+      <div class="rules-block-header dont-header">× NEVER DO THESE</div>
+      <ul class="rules-list dont-list">
+        <li>Never use a <strong>white or light background</strong> on thumbnails</li>
+        <li>Never use <strong>Inter, Roboto, Poppins, or Montserrat</strong> — they're everywhere</li>
+        <li>Never fill a <strong>large area with pure cyan</strong> — too overwhelming</li>
+        <li>Never use <strong>more than 3 accent colours</strong> in a single thumbnail</li>
+        <li>Never stretch or <strong>distort the logo</strong> — always maintain ratio</li>
+        <li>Never put <strong>the dark logo</strong> on a dark background — it disappears</li>
+        <li>Never use <strong>drop shadows</strong> — they look dated. Use glows instead</li>
+        <li>Never use <strong>WordArt-style gradients</strong> on body text — only headlines</li>
+        <li>Never put <strong>more than 8 words</strong> as the main headline on a thumbnail</li>
+        <li>Never mix <strong>Palette 1 + Palette 2 colours</strong> in the same piece</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<div class="divider-line"></div>
+
+<!-- ====== SECTION 8 — ECOSYSTEM ====== -->
+<div id="ecosystem" class="ecosystem-section">
+<div class="container">
+  <div class="sec-eyebrow">08 — Brand Ecosystem</div>
+  <h2 class="sec-title">Where Your Brand <em>Lives</em> — Full Map</h2>
+  <p class="sec-body">Your brand isn't just thumbnails. Here's every touchpoint where A&A visuals appear — and when to build each one out as you grow.</p>
+
+  <div class="ecosystem-grid">
+    <div class="eco-card reveal">
+      <span class="eco-icon">📺</span>
+      <div class="eco-title">YouTube Channel</div>
+      <div class="eco-items">Banner · Profile Pic<br>Thumbnails · End Cards<br>Chapter Cards</div>
+      <span class="eco-status stat-now">→ BUILD NOW</span>
+    </div>
+    <div class="eco-card reveal reveal-d1">
+      <span class="eco-icon">📱</span>
+      <div class="eco-title">YouTube Shorts</div>
+      <div class="eco-items">9:16 Thumbnail<br>Text Overlays<br>Shorts Cover Art</div>
+      <span class="eco-status stat-now">→ BUILD NOW</span>
+    </div>
+    <div class="eco-card reveal reveal-d2">
+      <span class="eco-icon">📸</span>
+      <div class="eco-title">Instagram</div>
+      <div class="eco-items">Feed Posts · Reels<br>Stories Templates<br>Highlights Icons</div>
+      <span class="eco-status stat-now">→ BUILD NOW</span>
+    </div>
+    <div class="eco-card reveal">
+      <span class="eco-icon">🎬</span>
+      <div class="eco-title">Video Intro</div>
+      <div class="eco-items">2-3 sec animated logo<br>Lower-thirds<br>Chapter cards</div>
+      <span class="eco-status stat-soon">SOON</span>
+    </div>
+    <div class="eco-card reveal reveal-d1">
+      <span class="eco-icon">🌐</span>
+      <div class="eco-title">Website</div>
+      <div class="eco-items">Landing page<br>Episode archive<br>Newsletter signup</div>
+      <span class="eco-status stat-soon">SOON</span>
+    </div>
+    <div class="eco-card reveal reveal-d2">
+      <span class="eco-icon">💬</span>
+      <div class="eco-title">Community</div>
+      <div class="eco-items">Discord server<br>YouTube Community<br>WhatsApp Channel</div>
+      <span class="eco-status stat-soon">SOON</span>
+    </div>
+    <div class="eco-card reveal">
+      <span class="eco-icon">🧢</span>
+      <div class="eco-title">Merch</div>
+      <div class="eco-items">T-shirts · Hoodies<br>Stickers · Notebooks<br>Tote bags</div>
+      <span class="eco-status stat-later">FUTURE</span>
+    </div>
+    <div class="eco-card reveal reveal-d1">
+      <span class="eco-icon">📧</span>
+      <div class="eco-title">Newsletter</div>
+      <div class="eco-items">Weekly email<br>Episode summaries<br>Exclusive analysis</div>
+      <span class="eco-status stat-later">FUTURE</span>
+    </div>
+  </div>
+
+  <!-- Priority Action Card -->
+  <div style="margin-top:2.5rem;padding:2rem;background:linear-gradient(135deg,rgba(0,245,212,0.06),rgba(123,47,255,0.06));border:1px solid rgba(0,245,212,0.15);border-radius:12px;" class="reveal">
+    <div class="sec-eyebrow">⚡ Your First 3 Actions</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem;">
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#F0F0F0;margin-bottom:0.4rem;">1. Lock the Fonts</div>
+        <p style="font-size:0.8rem;color:#666;line-height:1.6;">Install Bebas Neue, Syne, Fraunces, and Outfit on your computer. Add them to your Canva Brand Kit (free). This takes 15 minutes and immediately elevates every piece you make.</p>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#F0F0F0;margin-bottom:0.4rem;">2. Build 3 Thumbnail Templates</div>
+        <p style="font-size:0.8rem;color:#666;line-height:1.6;">One for Tech, one for Biz, one for History. Use the colour coding. Rebuild your next 3 thumbnails from these templates. Consistency from day one beats perfection from day 100.</p>
+      </div>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#F0F0F0;margin-bottom:0.4rem;">3. Redesign Your Profile</div>
+        <p style="font-size:0.8rem;color:#666;line-height:1.6;">New profile picture (monogram icon on dark), new banner using the full wordmark logo. These appear on every comment you make — brand is always on. Update these before your next video.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ANAND&amp;ARADHYA</div>
+  <div class="footer-tag">Tech · Business · History — The Gen Z Way</div>
+  <div class="footer-line"></div>
+  <div class="footer-copy">Brand Bible v2.0 · Built with Claude · March 2026</div>
+  <div class="footer-copy" style="margin-top:0.4rem;font-size:0.6rem;">Host this on GitHub Pages → Settings → Pages → Deploy from main branch</div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  setTimeout(() => {
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  }, 80);
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => ro.observe(el));
+
+// Animate score bars on scroll
+const bars = document.querySelectorAll('.pal-score-fill');
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.width = e.target.style.width || '0';
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+bars.forEach(b => { const w = b.style.width; b.style.width = '0'; setTimeout(() => b.style.width = w, 300); });
+</script>
+</body>
+</html>
